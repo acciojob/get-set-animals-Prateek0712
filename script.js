@@ -1,36 +1,27 @@
 //complete this code
 class Animal {
-	#species;
-	constructor(species)
-	{
-		this.species= species;
+	//NOTE : property name must not match getters and setters, so we always use #species -> it makes our property private
+	#species //creating it as private property
+	constructor(species){
+		this.#species = species;
 	}
 	get species(){
-		return this.species;
+		return this.#species;
 	}
 	makeSound(){
-		console.log(`The ${species} makes a sound`)
+		console.log("The "+ this.#species+ " makes a sound");
 	}
 }
 
 class Dog extends Animal {
-	constructor(species)
-	{
-		super(species);
-	}
 	bark(){
-		console.log('woof');
+		console.log("woof");
 	}
-	
 }
 
 class Cat extends Animal {
-	constructor(species)
-	{
-		super(species);
-	}
 	purr(){
-		console.log('purr');
+		console.log("purr");
 	}
 }
 
