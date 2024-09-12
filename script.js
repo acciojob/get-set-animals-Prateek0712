@@ -1,17 +1,40 @@
-const express = require('express');
-const path = require('path');
+//complete this code
+class Animal {
+	#species;
+	constructor(species)
+	{
+		this.species= species;
+	}
+	get species(){
+		return this.species;
+	}
+	makeSound(){
+		console.log(`The ${species} makes a sound`)
+	}
+}
 
-const app = express();
+class Dog extends Animal {
+	constructor(species)
+	{
+		super(species);
+	}
+	bark(){
+		console.log('woof');
+	}
+	
+}
 
-app.use(express.static(__dirname))
+class Cat extends Animal {
+	constructor(species)
+	{
+		super(species);
+	}
+	purr(){
+		console.log('purr');
+	}
+}
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/main.html'));
-});
-//your code here
-app.post('/add', (req, res) => {
-  const {a,b} = req.body;
-  res.status(200).send(a+b);
-  // res.sendFile(path.join(__dirname + '/main.html'));
-});
-module.exports = app;
+// Do not change the code below this line
+window.Animal = Animal;
+window.Dog = Dog;
+window.Cat = Cat;
